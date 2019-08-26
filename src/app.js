@@ -3,7 +3,9 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast');
+
 const app = express()
+const port = process.env.PORT || 7777
 
 //Define Paths for Express Config
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -89,7 +91,7 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(7777, ()=>{
-    console.log('Server is running on port 7777')
+app.listen(port, ()=>{
+    console.log(`Server is running on port ${port}`)
 })
 
